@@ -59,7 +59,7 @@ Hệ thống sử dụng **3-Layer Architecture** với **Strategy Pattern**:
 ### Clone Repository
 
 ```bash
-git clone [https://github.com/Waito3007/PaymentcardtoolsBE.git](https://github.com/Waito3007/PaymentcardtoolsBE.git)
+git clone https://github.com/Waito3007/PaymentcardtoolsBE.git
 cd paymentcardtools
 ```
 
