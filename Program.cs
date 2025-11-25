@@ -20,7 +20,8 @@ builder.Services.AddCors(options =>
         policy.WithOrigins(
                 "http://localhost:5173",
                 "http://localhost:5156",
-                "https://localhost:7069")
+                "https://localhost:7069",
+                "https://paymentcardtools-client.vercel.app")
             .AllowAnyHeader()
             .AllowAnyMethod();
     });
