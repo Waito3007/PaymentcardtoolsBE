@@ -21,7 +21,8 @@ builder.Services.AddCors(options =>
                 "http://localhost:5173",
                 "http://localhost:5156",
                 "https://localhost:7069",
-                "https://paymentcardtools-client.vercel.app")
+                "https://paymentcardtools-client.vercel.app",
+                "https://paymentcardtools-api-latest.onrender.com")
             .AllowAnyHeader()
             .AllowAnyMethod();
     });
@@ -39,5 +40,9 @@ app.UseHttpsRedirection();
 app.UseCors(corsPolicyName);
 
 app.MapControllers();
+
+app.MapGet("/health", () => Results.Ok(new { status = "healthy", timestamp = DateTime.UtcNow }))
+   .WithName("HealthCheck")
+   .WithTags("Health");
 
 app.Run();

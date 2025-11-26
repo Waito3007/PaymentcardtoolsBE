@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  # Backend API
+  paymentcardtools-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: paymentcardtools-api-dev
+    ports:
+      - "5000:8080"
+      - "5001:8081"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:8080
+    volumes:
+      - ./appsettings.Development.json:/app/appsettings.Development.json:ro
+    networks:
+      - paymentcardtools-network
+    restart: unless-stopped
+
+networks:
+  paymentcardtools-network:
+    driver: bridge
