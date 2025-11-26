@@ -65,7 +65,7 @@ public class KeyToolsController : ControllerBase
         }
 
         _keyQualityService.SetAlgorithm(request.Algorithm);
-        var result = _keyQualityService.ValidateBatch(keys);
+        var result = _keyQualityService.ValidateBatch(keys.Select(k => k.KeyHex).ToList());
         return Ok(result);
     }
 }

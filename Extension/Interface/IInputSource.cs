@@ -1,8 +1,9 @@
 using System;
+using Paymentcardtools.Models.DataModel;
 
 namespace Paymentcardtools.Extension.Interface;
 
 public interface IInputSource
 {
-    Task<List<string>> ExtractKeyAsync(object inputSource);
+    Task<List<KeyProcessingData>> ExtractKeyAsync(object inputSource);
 }
